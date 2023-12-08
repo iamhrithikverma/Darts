@@ -122,9 +122,14 @@ class ItemNote extends StatelessWidget {
                 const SizedBox(height: 3),
                 Text(
                   DateFormat(DateFormat.DAY).format(note.createdAt),
-                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                     color: Colors.white,
                   ),
+                ),
+                const SizedBox(height: 3),
+                Text(
+                  DateFormat(DateFormat.YEAR).format(note.createdAt),
+                  style: const TextStyle(color: Colors.white70),
                 ),
               ],
             ),
@@ -156,32 +161,32 @@ class ItemNote extends StatelessWidget {
                     fontWeight: FontWeight.w300,
                     height: 1.5,
                   ),
-                  maxLines: 3,
+                  maxLines: 2,
                   overflow: TextOverflow.ellipsis,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    IconButton(
-                      icon: const Icon(Icons.edit),
-                      onPressed: onEdit != null
-                          ? () {
-                        onEdit!();
-                      }
-                          : null,
-                    ),
-                    IconButton(
-                      icon: const Icon(Icons.delete),
-                      onPressed: onDelete != null
-                          ? () {
-                        onDelete!();
-                      }
-                          : null,
-                    ),
-                  ],
                 ),
               ],
             ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              IconButton(
+                icon: const Icon(Icons.edit),
+                onPressed: onEdit != null
+                    ? () {
+                  onEdit!();
+                }
+                    : null,
+              ),
+              IconButton(
+                icon: const Icon(Icons.delete),
+                onPressed: onDelete != null
+                    ? () {
+                  onDelete!();
+                }
+                    : null,
+              ),
+            ],
           ),
         ],
       ),
