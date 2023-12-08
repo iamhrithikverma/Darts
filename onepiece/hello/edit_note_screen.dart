@@ -1,12 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../models/note.dart';
 import '../../repository/notes_repository.dart';
 
 class EditNoteScreen extends StatefulWidget {
-  final Note note;
+  final int noteId;
 
-  const EditNoteScreen({Key? key, required this.note}) : super(key: key);
+  const EditNoteScreen({Key? key, required this.noteId}) : super(key: key);
 
   @override
   State<EditNoteScreen> createState() => _EditNoteScreenState();
@@ -15,20 +14,28 @@ class EditNoteScreen extends StatefulWidget {
 class _EditNoteScreenState extends State<EditNoteScreen> {
   late TextEditingController _titleController;
   late TextEditingController _descriptionController;
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  late Note note;
 
   @override
   void initState() {
     super.initState();
-    _titleController = TextEditingController(text: widget.note.title);
-    _descriptionController =
-        TextEditingController(text: widget.note.description);
+    _loadNoteData();
+    _titleController = TextEditingController();
+    _descriptionController = TextEditingController();
+  }
+
+  _loadNoteData() async {
+    // Use the correct method from NotesRepository to get the note by ID
+    note = await NotesRepository.getNote(widget.noteId);
+
+    // Initialize controllers with the loaded note data
+    _titleController.text = note.title;
+    _descriptionController.text = note.description;
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: _scaffoldKey, // Assign the key to the Scaffold
       appBar: AppBar(
         title: const Text('Edit Note'),
         actions: [
@@ -71,12 +78,16 @@ class _EditNoteScreenState extends State<EditNoteScreen> {
   }
 
   _updateNote() async {
-    final updatedNote = widget.note.copyWith(
+    // Update the note object with the new data
+    note = note.copyWith(
       title: _titleController.text,
       description: _descriptionController.text,
     );
 
-    await NotesRepository.update(note: updatedNote);
-    Navigator.pop(context); // Go back to the previous screen
+    // Use NotesRepository to update the note in the database
+    await NotesRepository.update(note: note);
+
+    // Pass the updated note back to the previous screen
+    Navigator.pop(context, note);
   }
 }
