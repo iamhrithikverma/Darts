@@ -60,7 +60,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                 maxLines: 50,
               ),
             ),
-          ], // Children
+          ],
         ),
       ),
     );
@@ -73,25 +73,13 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
       createdAt: DateTime.now(),
     );
 
-    // Use a Future-based approach with a completion callback
-    await NotesRepository.insert(note: note).then((_) {
-      // The callback is executed after the asynchronous operation is completed
+    await NotesRepository.insert(note: note);
+
+    // Navigate back to HomeScreen after adding the note
+    try {
       Navigator.pop(context);
-    });
+    } catch (e) {
+      print('Error popping context: $e');
+    }
   }
 }
-
-
-// _insertNote() async {
-  //   final note = Note(
-  //     title: _title.text,
-  //     description: _description.text,
-  //     createdAt: DateTime.now(),
-  //   );
-  //
-  //   await NotesRepository.insert(note: note);
-  //
-  //   // Navigate back to HomeScreen after adding the note
-  //   Navigator.pop(context);
-  // }
-// }
