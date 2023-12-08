@@ -56,6 +56,8 @@
 //   }
 // }
 
+// -----------------------------------------------------------------------------------------------------------------------
+
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 import '../models/note.dart';
@@ -125,6 +127,23 @@ class NotesRepository {
     );
   }
 
+  static Future<Note> getNote(int id) async {
+    final db = await _database();
+    final List<Map<String, dynamic>> maps = await db.query(
+      _tableName,
+      where: 'id = ?',
+      whereArgs: [id],
+    );
 
+    if (maps.isNotEmpty) {
+      return Note(
+        id: maps[0]['id'] as int,
+        title: maps[0]['title'] as String,
+        description: maps[0]['description'] as String,
+        createdAt: DateTime.parse(maps[0]['createdAt']),
+      );
+    } else {
+      throw Exception('Note not found');
+    }
+  }
 }
-
