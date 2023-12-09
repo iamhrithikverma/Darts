@@ -8,7 +8,7 @@ Welcome to your Notes App! A sleek and feature-rich Notes management application
 
 | Light Mode | Dark Mode | Home Screen With Notes |
 | ---------- | --------- | ----------------------- |
-| ![Home Screen - Light Mode](screenshots/home_screen_light_mode.jpg){ width=300 } | ![Home Screen - Dark Mode](screenshots/home_screen_dark_mode.jpg){ width=300 } | ![Home Screen With Notes](screenshots/home_screen_with_tasks_data.jpg){ width=300 } |
+| ![Home Screen - Light Mode](screenshots/home_screen_light_mode.jpg) | ![Home Screen - Dark Mode](screenshots/home_screen_dark_mode.jpg) | ![Home Screen With Notes](screenshots/home_screen_with_tasks_data.jpg) |
 
 ### Edit Note Screen
 
