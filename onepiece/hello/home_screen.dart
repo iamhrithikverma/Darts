@@ -85,7 +85,7 @@ import '../../repository/notes_repository.dart';
 import '../add-note/add_note_screen.dart';
 import '../edit_note/edit_note_screen.dart';
 import 'widgets/item_note.dart';
-
+import 'package:google_fonts/google_fonts.dart';
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -93,31 +93,41 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
+/// home_screen.dart
 class _HomeScreenState extends State<HomeScreen> {
-  // get note => null;
-
   @override
   Widget build(BuildContext context) {
+    final themeNotifier = ThemeNotifier.of(context);
+
     return Scaffold(
-      // appBar: AppBar(
-      //   title: const Text('My Diary'),
-      //   centerTitle: true,
-      // ),
       appBar: AppBar(
-        title: const Text('My Diary'),
+        title: Text('My Diary',
+          style: GoogleFonts.handlee(
+            // fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         centerTitle: true,
         actions: [
-          IconButton(
-            onPressed: () async {
-              await Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => const AddNoteScreen()),
-              );
-
-              // Use setState to trigger a rebuild when navigating back from AddNoteScreen
-              setState(() {});
+          FutureBuilder(
+            future: themeNotifier?.getThemeMode(),
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.done) {
+                return IconButton(
+                  onPressed: () {
+                    // Toggle between dark and light mode
+                    themeNotifier?.toggleTheme();
+                  },
+                  icon: Icon(
+                    snapshot.data == ThemeMode.dark
+                        ? Icons.light_mode
+                        : Icons.dark_mode,
+                  ),
+                );
+              } else {
+                return Container(); // Placeholder, you can replace it with a loading indicator
+              }
             },
-            icon: const Icon(Icons.add),
           ),
         ],
       ),
@@ -154,20 +164,20 @@ class _HomeScreenState extends State<HomeScreen> {
           }
         },
       ),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: () async {
-      //     await Navigator.push(
-      //       context,
-      //       MaterialPageRoute(builder: (_) => const AddNoteScreen()),
-      //     );
-      //
-      //     // Use setState to trigger a rebuild when navigating back from AddNoteScreen
-      //     setState(() {});
-      //   },
-      //   backgroundColor: Theme.of(context).colorScheme.primary,
-      //   foregroundColor: Colors.white,
-      //   child: const Icon(Icons.add),
-      // ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          await Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => const AddNoteScreen()),
+          );
+
+          // Use setState to trigger a rebuild when navigating back from AddNoteScreen
+          setState(() {});
+        },
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        foregroundColor: Colors.white,
+        child: const Icon(Icons.add),
+      ),
     );
   }
 
@@ -223,4 +233,53 @@ class _HomeScreenState extends State<HomeScreen> {
       setState(() {});
     }
   }
+}
+
+/// theme_manager.dart
+class ThemeManager {
+  final BuildContext context;
+
+  ThemeManager.of(this.context);
+
+  void setThemeMode(ThemeMode themeMode) {
+    final themeNotifier = ThemeNotifier.of(context);
+    themeNotifier?.setThemeMode(themeMode);
   }
+}
+/// theme_notifier.dart
+/// theme_notifier.dart
+class ThemeNotifier extends ChangeNotifier {
+  ThemeMode _themeMode = ThemeMode.system;
+
+  ThemeMode get themeMode => _themeMode;
+
+  Future<ThemeMode?> getThemeMode() async {
+    return _themeMode;
+  }
+
+  void setThemeMode(ThemeMode themeMode) {
+    _themeMode = themeMode;
+    notifyListeners();
+  }
+
+  void toggleTheme() {
+    setThemeMode(
+      _themeMode == ThemeMode.light ? ThemeMode.dark : ThemeMode.light,
+    );
+  }
+
+  static ThemeNotifier? of(BuildContext context) {
+    return context
+        .dependOnInheritedWidgetOfExactType<InheritedThemeNotifier>()
+        ?.notifier;
+  }
+}
+
+/// inherited_theme_notifier.dart
+class InheritedThemeNotifier extends InheritedNotifier<ThemeNotifier> {
+  const InheritedThemeNotifier({
+    Key? key,
+    required ThemeNotifier notifier,
+    required Widget child,
+  }) : super(key: key, notifier: notifier, child: child);
+}
