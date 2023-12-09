@@ -6,28 +6,21 @@ Welcome to your Notes App! A sleek and feature-rich Notes management application
 
 ### Home Screen
 
-#### Light Mode
-<img src="screenshots/home_screen_light_mode.jpg" alt="Home Screen - Light Mode" width="300">
-
-#### Dark Mode
-<img src="screenshots/home_screen_dark_mode.jpg" alt="Home Screen - Dark Mode" width="300">
-
-#### Home Screen With Notes
-<img src="screenshots/home_screen_with_tasks_data.jpg" alt="Home Screen - With Notes" width="300">
+| Light Mode | Dark Mode | Home Screen With Notes |
+| ---------- | --------- | ----------------------- |
+| ![Home Screen - Light Mode](screenshots/home_screen_light_mode.jpg){ width=300 } | ![Home Screen - Dark Mode](screenshots/home_screen_dark_mode.jpg){ width=300 } | ![Home Screen With Notes](screenshots/home_screen_with_tasks_data.jpg){ width=300 } |
 
 ### Edit Note Screen
-<img src="screenshots/edit_note_screen.jpg" alt="Edit Note Screen" width="300">
 
-### Add Note Screen
-
-#### With Typing Off
-<img src="screenshots/add_note_screen_typing_off.jpg" alt="Add Note Screen - Typing Off" width="300">
-
-#### With Typing On
-<img src="screenshots/add_note_screen_typing_on.jpg" alt="Add Note Screen - Typing On" width="300">
+| Edit Note Screen | Add Note Screen - Typing Off | Add Note Screen - Typing On |
+| ----------------- | ---------------------------- | --------------------------- |
+| ![Edit Note Screen](screenshots/edit_note_screen.jpg){ width=300 } | ![Add Note Screen - Typing Off](screenshots/add_note_screen_typing_off.jpg){ width=300 } | ![Add Note Screen - Typing On](screenshots/add_note_screen_typing_on.jpg){ width=300 } |
 
 ### Delete Note Confirmation Screen
-<img src="screenshots/delete_note_confirmation.jpg" alt="Delete Note Confirmation Screen" width="300">
+
+| Delete Note Confirmation Screen |
+| ------------------------------ |
+| ![Delete Note Confirmation Screen](screenshots/delete_note_confirmation.jpg){ width=300 } |
 
 ## Features
 
