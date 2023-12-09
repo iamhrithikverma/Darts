@@ -14,13 +14,20 @@ Welcome to your Notes App! A sleek and feature-rich Notes management application
 
 | Edit Note Screen | Add Note Screen - Typing Off | Add Note Screen - Typing On |
 | ----------------- | ---------------------------- | --------------------------- |
-| ![Edit Note Screen](screenshots/edit_note_screen.jpg){ width=300 } | ![Add Note Screen - Typing Off](screenshots/add_note_screen_typing_off.jpg){ width=300 } | ![Add Note Screen - Typing On](screenshots/add_note_screen_typing_on.jpg){ width=300 } |
+| ![Edit Note Screen](screenshots/edit_note_screen.jpg) | ![Add Note Screen - Typing Off](screenshots/add_note_screen_typing_off.jpg) | ![Add Note Screen - Typing On](screenshots/add_note_screen_typing_on.jpg) |
 
 ### Delete Note Confirmation Screen
 
 | Delete Note Confirmation Screen |
 | ------------------------------ |
-| ![Delete Note Confirmation Screen](screenshots/delete_note_confirmation.jpg){ width=300 } |
+| ![Delete Note Confirmation Screen](screenshots/delete_note_confirmation.jpg) |
+
+## Social Media
+
+Connect with me on social media for updates and discussions:
+
+- LinkedIn: [Hrithik Verma](https://www.linkedin.com/in/hrithik-verma-375238194/)
+- WhatsApp: [Hrithik Verma](https://wa.me/+918102780251)
 
 ## Features
 
