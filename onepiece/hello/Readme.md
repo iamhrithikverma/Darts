@@ -12,9 +12,9 @@ Welcome to your Notes App! A sleek and feature-rich Notes management application
 
 ### Notes App Features :
 
-| Edit Note Screen | Add Note Screen - Typing Off | Add Note Screen - Typing On | Delete Note Confirmation Screen |
-| ----------------- | ---------------------------- | --------------------------- | --------------------------- |
-| ![Edit Note Screen](screenshots/edit_note_screen.jpg) | ![Add Note Screen - Typing Off](screenshots/add_note_screen_typing_off.jpg) | ![Add Note Screen - Typing On](screenshots/add_note_screen_typing_on.jpg) | ![Delete Note Confirmation Screen](screenshots/delete_note_confirmation.jpg) |
+| Add Note Screen - Typing Off | Add Note Screen - Typing On | Edit Note Screen | Delete Note Confirmation Screen |
+| ---------------------------- | --------------------------- | ---------------- | ------------------------------- |
+| ![Add Note Screen - Typing Off](screenshots/add_note_screen_typing_off.jpg) | ![Add Note Screen - Typing On](screenshots/add_note_screen_typing_on.jpg) | ![Edit Note Screen](screenshots/edit_note_screen.jpg) | ![Delete Note Confirmation Screen](screenshots/delete_note_confirmation.jpg) |
 
 
 
