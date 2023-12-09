@@ -35,10 +35,10 @@ Connect with me on social media for updates and discussions:
 
 ## Libraries Used
 
-- **[intl](https://pub.dev/packages/intl)**: For internationalization and localization.
-- **sqflite**: SQLite database plugin for Flutter.
-- **path**: A library for handling file and directory paths.
-- **google_fonts**: For customisation of fonts you can use google fonts. You can find the library at [google_fonts](https://pub.dev/packages/google_fonts).
+- **[intl](https://pub.dev/packages/intl)** : For internationalization and localization.
+- **[sqflite](https://pub.dev/packages/sqflite)** : SQLite database plugin for Flutter.
+- **[path](https://pub.dev/packages/path)** : A library for handling file and directory paths.
+- **[google_fonts](https://pub.dev/packages/google_fonts)** : For customisation of fonts you can use google fonts.
 
 ## Getting Started
 
