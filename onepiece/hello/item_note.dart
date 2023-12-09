@@ -85,10 +85,12 @@
 //   }
 // }
 
+// ---------------------------------------------------------------------------------------------------------------
+
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:diary/models/note.dart';
-
+import 'package:google_fonts/google_fonts.dart';
 class ItemNote extends StatelessWidget {
   final Note note;
   final VoidCallback? onDelete;
@@ -103,8 +105,25 @@ class ItemNote extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 10),
+      decoration: BoxDecoration(
+        color: isDarkMode ? Colors.grey[800] : Colors.grey[200], // Background color
+        borderRadius: BorderRadius.circular(15), // Border radius
+        boxShadow: [
+          BoxShadow(
+            color: isDarkMode ? Colors.black.withOpacity(0.4) : Colors.white.withOpacity(0.7),
+            offset: const Offset(-8, -8), // Shadow position (top-left)
+            blurRadius: 12,
+          ),
+          BoxShadow(
+            color: isDarkMode ? Colors.white.withOpacity(0.1) : Colors.black.withOpacity(0.2),
+            offset: const Offset(8, 8), // Shadow position (bottom-right)
+            blurRadius: 12,
+          ),
+        ],
+      ),
       child: Row(
         children: [
           Container(
@@ -122,14 +141,24 @@ class ItemNote extends StatelessWidget {
                 const SizedBox(height: 3),
                 Text(
                   DateFormat(DateFormat.DAY).format(note.createdAt),
-                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                  style: GoogleFonts.handlee(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
+                  // style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                  //   color: Colors.white,
+                  // ),
                 ),
                 const SizedBox(height: 3),
                 Text(
                   DateFormat(DateFormat.YEAR).format(note.createdAt),
-                  style: const TextStyle(color: Colors.white70),
+                  style: GoogleFonts.handlee(
+                    fontSize: 12,
+                    fontWeight: FontWeight.normal,
+                    color: Colors.white70,
+                  ),
+                  // style: const TextStyle(color: Colors.white70),
                 ),
               ],
             ),
@@ -145,22 +174,35 @@ class ItemNote extends StatelessWidget {
                     Expanded(
                       child: Text(
                         note.title,
-                        style: const TextStyle(fontWeight: FontWeight.bold),
+                        style: GoogleFonts.handlee(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white70,
+                        ),
+                        // style: const TextStyle(fontWeight: FontWeight.bold),
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
                     Text(
                       DateFormat(DateFormat.HOUR_MINUTE).format(note.createdAt),
+                      style: GoogleFonts.handlee(
+                        fontWeight: FontWeight.normal,
+                      ),
                     ),
                   ],
                 ),
                 Text(
                   note.description,
-                  style: const TextStyle(
+                  style: GoogleFonts.handlee(
+                    fontSize: 16,
                     fontWeight: FontWeight.w300,
                     height: 1.5,
                   ),
+                  // style: const TextStyle(
+                  //   fontWeight: FontWeight.w300,
+                  //   height: 1.5,
+                  // ),
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                 ),
