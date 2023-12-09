@@ -2,6 +2,10 @@
 
 Welcome to your Notes App! A sleek and feature-rich Notes management application developed using Dart and Flutter. Whether you're organizing your Collection of Notes, editing those notes, adding new ones, or deleting notes, this app provides an intuitive and customizable experience.
 
+## App Icon
+
+![App Icon](screenshots/logo.png)
+
 ## Screenshots
 
 ### Home Screen
