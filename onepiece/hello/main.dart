@@ -18,11 +18,16 @@
 import 'package:diary/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 
+/// main.dart
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(const MyApp());
+  runApp(
+    InheritedThemeNotifier(
+      notifier: ThemeNotifier(),
+      child: const MyApp(),
+    ),
+  );
 }
-
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -31,10 +36,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Diary',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
-        useMaterial3: true,
-      ),
+      themeMode: ThemeNotifier.of(context)?.themeMode ?? ThemeMode.system,
+      theme: ThemeData.light(), // Set the default light theme
+      darkTheme: ThemeData.dark(), // Set the default dark theme
       home: const HomeScreen(),
     );
   }
