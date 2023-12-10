@@ -10,7 +10,7 @@ Welcome to your Notes App! A sleek and feature-rich Notes management application
 
 Download the latest version of the Notes App:
 
-[![Download Notes App](https://img.shields.io/badge/Download-Notes%20App-blue?style=for-the-badge)](https://drive.google.com/uc?export=download&id=1EWrh2iM1MkqQcwFGlAYYh_4YyM78Ljbx)
+[![Download Notes App](https://img.shields.io/badge/Download-Notes%20App-%23674fa3?style=for-the-badge&logo=google-drive&logoColor=%23fffbff)](https://drive.google.com/uc?export=download&id=1EWrh2iM1MkqQcwFGlAYYh_4YyM78Ljbx)
 
 ## Screenshots
 
