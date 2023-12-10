@@ -6,6 +6,12 @@ Welcome to your Notes App! A sleek and feature-rich Notes management application
 
 ![App Icon](screenshots/logo.png)
 
+## Download the App
+
+Download the latest version of the Notes App:
+
+[![Download Notes App](https://img.shields.io/badge/Download-Notes%20App-blue?style=for-the-badge)](https://drive.google.com/uc?export=download&id=1EWrh2iM1MkqQcwFGlAYYh_4YyM78Ljbx)
+
 ## Screenshots
 
 ### Home Screen
