@@ -1,0 +1,47 @@
+void main() {
+//   int x = 12~/4;
+//   int y = 12%4;
+//   double z = 12/4;
+//   print('$x,$y,$z');
+  
+//   print('`-`-`-`-`-`1`-`-`-`-`-`');
+//   try{
+//     int x = 12~/0;
+//     print("result : $x");
+//   }on IntegerDivisionByZeroException{
+//     print('not div. by zero');
+//   }
+//   print('`-`-`-`-`-`2`-`-`-`-`-`');
+  
+  try{
+    int x = 12~/0;
+    print("result : $x");
+  }catch(e,s){
+    print('the exception is $e');
+    print('Stack Trace \n $s');
+  }
+}
+
+
+// void greetOptionalPositionalWithDefault([String name = "World"]) {
+//   print("Hello, $name!");
+// }
+
+// void main() {
+//   greetOptionalPositionalWithDefault(); // Output: Hello, World!
+//   greetOptionalPositionalWithDefault("Alice"); // Output: Hello, Alice!
+// }
+
+
+// void main() {
+// //   findPerimeter(4,2);  
+// //   getArea(5,4);
+//   text(2,3,"hello");
+// }
+// // void findPerimeter(int length , int breadth) => print('the perimeter is ${2*(length+breadth)}');
+// // int getArea(int length , int breadth) => length * breadth;
+
+// void text(int a ,int b ,[String c]){
+//   print('${a+b}');
+//   print('$c');
+// }
