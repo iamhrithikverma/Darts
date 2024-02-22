@@ -1,0 +1,34 @@
+void main() {
+  var student1 = Student(25,'hrithik');
+  var student2 = Student(09,'verma');
+//   print('${student1.id} and ${student1.name}');
+  student1.study();
+  student1.sleep();
+  student2.study();
+  student2.sleep();
+}
+
+class Student {
+  late int id; // instance or field variable , default as "null"
+  late String name; // instance or field variable , default as "null"
+//   Student(){
+//     print('default constructor ');
+//   }
+  
+//   Student(int id , String name){
+//     this.id=id;
+//     this.name=name;          // parametrised constructor type 1
+//   }
+  
+  Student(this.id,this.name);   // parametrised constructor type 2
+  
+  void study() {
+//    code
+    print('hello , my name is ${this.name}');
+  }
+
+  void sleep() {
+//     code
+    print('and my roll no. is ${this.id}');
+  }
+}
